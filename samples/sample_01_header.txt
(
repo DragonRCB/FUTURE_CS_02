@@ -1,0 +1,30 @@
+Received: from mail-out.attacker-controlled-server.net (attacker-controlled-server.net [185.220.101.5])
+    by mx.google.com with ESMTPS id x18si3920194pln.120.2026.09.20.01.15.30
+    for <victim@example.com>;
+    Sun, 20 Sep 2026 01:15:30 -0700 (PDT)
+Received-SPF: fail (google.com: domain of alert@paypa1-security-check.com does not designate 185.220.101.5 as permitted sender) client-ip=185.220.101.5;
+Authentication-Results: mx.google.com;
+       dkim=fail header.i=@paypa1-security-check.com header.s=s1 header.b=X9a2B1;
+       spf=fail (google.com: domain of alert@paypa1-security-check.com does not designate 185.220.101.5 as permitted sender) smtp.mailfrom=alert@paypa1-security-check.com;
+       dmarc=fail (p=REJECT sp=REJECT dis=NONE) header.from=paypal.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=paypa1-security-check.com; s=s1;
+        h=from:to:subject:date:message-id;
+        bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+        b=InvalidSignatureValue9876543210==
+From: "PayPal Account Support" <service@paypal.com>
+To: <victim@example.com>
+Subject: URGENT: Your PayPal Account Has Been Suspended!
+Date: Sun, 20 Sep 2026 08:15:25 +0000
+Message-ID: <20260920081525.99281.qmail@paypa1-security-check.com>
+Reply-To: "Security Team" <alert@paypa1-security-check.com>
+Return-Path: <alert@paypa1-security-check.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+<body>
+<p>Dear Customer,</p>
+<p>We detected unauthorized access attempts on your account. Please confirm your details immediately to prevent permanent suspension.</p>
+<p><a href="http://185.220.101.5/verify-account/login.php">Click here to verify your identity</a></p>
+</body>
+</html>
